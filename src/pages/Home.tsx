@@ -1,4 +1,5 @@
 import { Header } from "../components/Header";
+import { Footer } from '../components/Footer'
 
 import "../styles/home.scss";
 
@@ -41,6 +42,7 @@ export function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
