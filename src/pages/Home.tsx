@@ -17,9 +17,9 @@ export function Home() {
           <h1 className="jumbotron-heading">Bruno Amorim</h1>
           <p className="lead text-muted">Software Engineer</p>
           <div className="contact-links"></div>
-          <a href="contact.html" className="btn btn-dark my-2">
+          {/* <a href="contact.html" className="btn btn-dark my-2">
             Contato
-          </a>
+          </a> */}
           <div className="social-icons">
             <a target="_blank" href="https://www.linkedin.com/in/amorim-bruno/">
               <i className="fab fa-linkedin icons"></i>
