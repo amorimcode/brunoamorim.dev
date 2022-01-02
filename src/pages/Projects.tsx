@@ -21,7 +21,7 @@ export function Projects() {
           <Card
               title="Car API - Node.js"
               imgSrc="https://github.com/amorimcode/CarAPI/raw/main/assets/collection.png"
-              projectLink="https://github.com/amorimcode/CarAPI"
+              projectLink="https://github.com/amorimcode/insta-post-reminder"
             >
               API criada para gerenciar (incluir, excluir, editar e consultar)
               um cadastro de carros com sistema criptografado de cadastro e
