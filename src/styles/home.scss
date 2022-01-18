@@ -1,9 +1,11 @@
 html, body {
   margin: 0;
   height: 100%;
+  background: #f1f5f8;
 }
 
 #home {
+  height: 100vh;
   #profile-photo {
     height: 250px;
     width: auto;
