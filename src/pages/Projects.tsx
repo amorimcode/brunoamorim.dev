@@ -5,6 +5,7 @@ import { Card } from "../components/Card";
 import instaPost from "../assets/images/instapost.png";
 import minhastarefas from "../assets/images/minhastarefas.png";
 import portfolioPng from "../assets/images/portfolio.png";
+import ieq from "../assets/images/ieq.png";
 
 import "../styles/projects.scss";
 
@@ -22,6 +23,14 @@ export function Projects() {
         </p>
         <div className="row">
           <div className="col-md-4">
+            <Card
+              title="IEQ Vista Alegre"
+              imgSrc={ieq}
+              isGithub={false}
+              projectLink="https://ieqvistaalegre-web.herokuapp.com/"
+            >
+              Aplicação desenvolvida em React para Igreja.
+            </Card>
             <Card
               title="brunoamorim.dev"
               imgSrc={portfolioPng}
