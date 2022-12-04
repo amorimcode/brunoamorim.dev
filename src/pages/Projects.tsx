@@ -8,8 +8,19 @@ import portfolioPng from "../assets/images/portfolio.png";
 import ieq from "../assets/images/ieq.png";
 
 import "../styles/projects.scss";
+import { useEffect, useState } from "react";
 
 export function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/amorimcode/repos")
+      .then((response) => response.json())
+      .then((data) => setProjects(data));
+
+    console.log(projects);
+  }, []);
+
   return (
     <div className="projects">
       <Header />
@@ -38,17 +49,6 @@ export function Projects() {
             >
               Todo o código e arquivos utilizados para a construção desse
               portfólio estão disponíveis para consulta no respositório GitHub.
-            </Card>
-            <Card
-              title="Desafio Pokémon"
-              imgSrc="https://github.com/amorimcode/desafiopokemon/raw/main/media/screenshots/Screenshot%202021-01-26%20155324.png?raw=true"
-              projectLink="https://github.com/amorimcode/desafiopokemon"
-            >
-              Este é um teste feito para um processo seletivo que participei.
-              Gostei muito da abordagem e de como os conhecimentos foram
-              cobrados de forma divertida. A página retorna um pokémon de acordo
-              com a temperatura da cidade pesquisada, seguindo alguns critérios
-              estabelecidos pelo teste.
             </Card>
           </div>
           <div className="col-md-4">
@@ -87,6 +87,30 @@ export function Projects() {
               utilizando a API https://api.lyrics.ovh/.
             </Card>
           </div>
+
+          {projects.map((project: any) => (
+            <div className="col-md-4">
+              <Card
+                title={project.name}
+                imgSrc="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"
+                projectLink={project.html_url}
+              >
+                {project.description ?? "Sem descrição"}
+              </Card>
+            </div>
+          ))}
+
+          <Card
+            title="Desafio Pokémon"
+            imgSrc="https://github.com/amorimcode/desafiopokemon/raw/main/media/screenshots/Screenshot%202021-01-26%20155324.png?raw=true"
+            projectLink="https://github.com/amorimcode/desafiopokemon"
+          >
+            Este é um teste feito para um processo seletivo que participei.
+            Gostei muito da abordagem e de como os conhecimentos foram cobrados
+            de forma divertida. A página retorna um pokémon de acordo com a
+            temperatura da cidade pesquisada, seguindo alguns critérios
+            estabelecidos pelo teste.
+          </Card>
         </div>
       </div>
       <Footer />
